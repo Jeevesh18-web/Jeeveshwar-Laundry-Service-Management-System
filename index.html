@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jeeveshwar Laundry Service Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div><span class="brand">JL</span><div><h1>Jeeveshwar Laundry</h1><p>Service Management System</p></div></div><span class="tag">CLEAN • CARE • DELIVER</span></header>
+<main>
+  <section class="welcome"><div><p class="eyebrow">LAUNDRY CONTROL PANEL</p><h2>Fresh clothes. Smooth operations.</h2><p>Manage customers, services, orders and payments in one place.</p></div><div class="wash-icon">✦</div></section>
+  <section class="stats">
+    <article><span>Customers</span><strong id="customerCount">0</strong></article>
+    <article><span>Total orders</span><strong id="orderCount">0</strong></article>
+    <article><span>Active orders</span><strong id="pendingCount">0</strong></article>
+    <article><span>Paid revenue</span><strong id="revenue">₹0.00</strong></article>
+  </section>
+  <section class="grid">
+    <article class="panel"><h3>Add customer</h3><form id="customerForm">
+      <input name="name" placeholder="Customer name" required><input name="phone" placeholder="Phone number" required>
+      <input name="email" type="email" placeholder="Email (optional)"><input name="address" placeholder="Address">
+      <button>Add customer</button></form></article>
+    <article class="panel"><h3>Create laundry order</h3><form id="orderForm">
+      <select name="customer_id" id="customerSelect" required><option value="">Select customer</option></select>
+      <select name="service_id" id="serviceSelect" required><option value="">Select service</option></select>
+      <input name="clothes_weight" type="number" min="0.1" step="0.1" placeholder="Clothes weight (kg)" required>
+      <label>Expected delivery date</label><input name="delivery_date" type="date"><button>Create order</button></form></article>
+    <article class="panel"><h3>Record payment</h3><form id="paymentForm">
+      <select name="order_id" id="paymentOrder" required><option value="">Select order</option></select>
+      <input name="amount" type="number" min="1" step="0.01" placeholder="Amount (₹)" required>
+      <select name="payment_method"><option>Cash</option><option>UPI</option><option>Card</option><option>Bank Transfer</option></select>
+      <select name="status"><option>Paid</option><option>Pending</option></select><button>Save payment</button></form></article>
+    <article class="panel"><h3>Available services</h3><div id="serviceList" class="service-list">Loading services...</div></article>
+  </section>
+  <section class="panel table-panel"><div class="section-title"><h3>Recent laundry orders</h3><button class="secondary" id="refreshBtn">Refresh</button></div>
+    <div class="table-wrap"><table><thead><tr><th>Order</th><th>Customer</th><th>Service</th><th>Weight</th><th>Amount</th><th>Status</th><th>Update</th></tr></thead><tbody id="ordersBody"><tr><td colspan="7">Loading...</td></tr></tbody></table></div>
+  </section>
+  <p id="message" role="status"></p>
+</main>
+<footer>Jeeveshwar Laundry Service Management System · Mini Project</footer>
+<script src="app.js"></script>
+</body></html>
