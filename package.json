@@ -1,0 +1,9 @@
+{
+  "name": "jeeveshwar-laundry-service-management-system",
+  "version": "1.0.0",
+  "description": "Laundry order, service, customer and payment management system",
+  "main": "server.js",
+  "scripts": { "start": "node server.js", "dev": "nodemon server.js" },
+  "dependencies": { "dotenv": "^16.4.5", "express": "^4.21.2", "mysql2": "^3.11.5" },
+  "devDependencies": { "nodemon": "^3.1.7" }
+}
